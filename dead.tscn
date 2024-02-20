@@ -1,0 +1,34 @@
+[gd_scene load_steps=2 format=3 uid="uid://b1odekmdepub8"]
+
+[ext_resource type="Script" path="res://dead.gd" id="1_vq42p"]
+
+[node name="Node2D" type="Node2D"]
+scale = Vector2(0.38, 0.38)
+script = ExtResource("1_vq42p")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 463.0
+offset_top = 604.0
+offset_right = 2412.0
+offset_bottom = 1050.0
+theme_override_font_sizes/normal_font_size = 200
+text = "GAME IS NOT OVER"
+
+[node name="Button" type="Button" parent="."]
+offset_left = 1498.0
+offset_top = 1174.0
+offset_right = 2040.0
+offset_bottom = 1278.0
+theme_override_font_sizes/font_size = 70
+text = "KEEP GRINDING"
+
+[node name="Button2" type="Button" parent="."]
+offset_left = 1497.0
+offset_top = 1324.0
+offset_right = 2298.0
+offset_bottom = 1428.0
+theme_override_font_sizes/font_size = 70
+text = "OR THERE IS NO WAY OUT"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

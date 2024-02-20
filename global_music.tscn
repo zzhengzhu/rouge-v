@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://lre524s4a6bi"]
+
+[ext_resource type="AudioStream" uid="uid://bns8khprwluov" path="res://assets/upbeat-energetic-rock-186788.mp3" id="1_yo7e3"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_yo7e3")
+autoplay = true

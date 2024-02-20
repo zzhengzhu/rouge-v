@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=3 uid="uid://58lvwpthmy7p"]
+
+[ext_resource type="Texture2D" uid="uid://iv4fbpbv762g" path="res://assets/grass.png" id="1_j8c4m"]
+[ext_resource type="Script" path="res://winning.gd" id="1_pwa0t"]
+
+[node name="Node2D" type="Node2D"]
+scale = Vector2(0.38, 0.38)
+script = ExtResource("1_pwa0t")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(23, -79)
+scale = Vector2(1.76497, 1.76496)
+texture = ExtResource("1_j8c4m")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = -412.0
+offset_top = -81.0
+offset_right = 895.0
+offset_bottom = 490.0
+theme_override_font_sizes/normal_font_size = 70
+text = "YOU TOUCHED GRASS!!!"
+
+[node name="Button" type="Button" parent="."]
+offset_left = 14.0
+offset_top = 693.0
+offset_right = 2187.0
+offset_bottom = 838.0
+theme_override_font_sizes/font_size = 50
+text = "GO BACK TO YOUR  DUNGEON"
+flat = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

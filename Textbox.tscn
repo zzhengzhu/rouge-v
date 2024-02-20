@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=3 uid="uid://duhrgu5r1x72q"]
+
+[ext_resource type="Texture2D" uid="uid://cotlep2ub6ur3" path="res://assets/dialogbox.png" id="1_5ha5p"]
+[ext_resource type="Script" path="res://Textbox.gd" id="1_20ias"]
+[ext_resource type="FontFile" uid="uid://b58dmaa8aha50" path="res://assets/joystix monospace.otf" id="3_8tt6w"]
+
+[node name="Textbox" type="MarginContainer"]
+offset_right = 72.0
+offset_bottom = 58.0
+scale = Vector2(0.603145, 0.603145)
+script = ExtResource("1_20ias")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_5ha5p")
+region_rect = Rect2(0, 0, 39, 39)
+patch_margin_left = 13
+patch_margin_top = 13
+patch_margin_right = 14
+patch_margin_bottom = 14
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 8
+
+[node name="Label" type="Label" parent="MarginContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_8tt6w")
+theme_override_font_sizes/font_size = 20
+vertical_alignment = 1
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

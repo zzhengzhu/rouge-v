@@ -1,0 +1,87 @@
+[gd_scene load_steps=6 format=3 uid="uid://xyc5q1cppys5"]
+
+[ext_resource type="Script" path="res://Menu.gd" id="1_3d0ti"]
+[ext_resource type="Texture2D" uid="uid://cffa62lt7ioq" path="res://assets/brick.png" id="1_t34xg"]
+[ext_resource type="Texture2D" uid="uid://blrwxvujya8qs" path="res://assets/rouge.png" id="3_si1db"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y554b"]
+texture = ExtResource("1_t34xg")
+texture_region_size = Vector2i(40, 40)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+0:8/0 = 0
+0:9/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_v4jro"]
+tile_size = Vector2i(40, 40)
+sources/0 = SubResource("TileSetAtlasSource_y554b")
+
+[node name="Node2D" type="Node2D"]
+scale = Vector2(0.38, 0.38)
+script = ExtResource("1_3d0ti")
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_v4jro")
+format = 2
+layer_0/tile_data = PackedInt32Array(2293781, 0, 0, 2097177, 0, 0, 2228290, 0, 0, 1966144, 0, 0, 2162751, 0, 0, 1769518, 0, 0, 1835054, 0, 0, 2097203, 0, 0, 327741, 0, 0, 262181, 0, 0, 262166, 0, 0, 1048597, 0, 0, 1638458, 0, 2, 1114167, 0, 2, 1966135, 0, 2, 1835032, 0, 2, 1507351, 0, 2, 1179677, 0, 2, 720912, 0, 1, 786486, 0, 1, 786499, 0, 1, 1114180, 0, 1, 2424887, 0, 1, 1966100, 0, 1, 2097171, 0, 1, 1835062, 0, 3, 786455, 0, 3, 852009, 0, 4, 2424880, 0, 4, 1638468, 0, 7, 2031630, 0, 7, 1703986, 0, 9, 1769501, 0, 6, 1310741, 0, 5, 1507386, 0, 5, 1966140, 0, 5)
+
+[node name="Start" type="Button" parent="."]
+offset_left = 1179.0
+offset_top = 1366.0
+offset_right = 1486.0
+offset_bottom = 1511.0
+theme_override_font_sizes/font_size = 100
+text = "START"
+
+[node name="Quit" type="Button" parent="."]
+offset_left = 1616.0
+offset_top = 1366.0
+offset_right = 1865.0
+offset_bottom = 1511.0
+theme_override_font_sizes/font_size = 100
+text = "QUIT
+"
+
+[node name="Rouge" type="Sprite2D" parent="."]
+position = Vector2(1699, 963)
+scale = Vector2(5.88, 5.88)
+texture = ExtResource("3_si1db")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 1981.58
+offset_top = 1426.32
+offset_right = 3129.58
+offset_bottom = 1649.32
+theme_override_font_sizes/normal_font_size = 50
+text = "Destroy all statues!
+Control: arrow keys or WASD
+Music by Vitaly Vakulenko from Pixabay"
+
+[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
